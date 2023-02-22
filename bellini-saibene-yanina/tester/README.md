@@ -19,6 +19,9 @@ for name in globals():
 
 Why?
 
+The first loop throws an error "dictionay change size during interaction".  The second one don't throws an error.  
+The reason is that in the first loop we are creating the variable "name" in the loop execution, that variable is added to globals() and that is where the dictionary has one more element than when the loop started. In the second case we create the variable before we execute the loop, so the variable is already in globals and then the number of elements don't change.
+
 ## Counting Results
 
 1.  Modify the test framework so that it reports which tests passed, failed, or had errors
